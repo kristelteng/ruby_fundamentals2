@@ -1,10 +1,10 @@
 def convert(fahrenheit)
-	celsius = (fahrenheit.to_i - 32) * 5/9
-	return celsius 
+	celsius = ((fahrenheit - 32) * 5.0/9).to_i
+
 end
 
 puts "What is the temperature in fahrenheit?."
-temperature = gets.chomp
+temperature = gets.chomp.to_i
 
 celsius = convert(temperature)
 puts "temperature in celsius is: #{celsius}"
