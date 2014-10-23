@@ -1,42 +1,36 @@
 grocery_list = ["carrots", "toilet paper", "apples", "salmon"]
 grocery_list << "rice"
-grocery_list.sort!
-grocery_list.delete_at(3)
-grocery_list.insert(3, "salmon")
 
-
-	def print_list(the_list)
-		the_list.each do |item|
-			puts "* #{item}"
-		end
+def print_list(the_list)
+	the_list.each do |item|
+		puts "* #{item}"
 	end
-
+end
 print_list(grocery_list)
 
-puts grocery_list.length
+puts ""
+puts "The list contain #{grocery_list.length} items"
 
-	if grocery_list.include?("bananas")
-			puts "You need to pick up bananas"
-		else
-			puts "You don't need to pick up bananas today"
-	end
-	
-puts grocery_list[2]
+puts ""
+if grocery_list.include?("bananas")
+	puts "You don't need to pick up bananas today"
+else
+	puts "You need to pick up bananas"
+	grocery_list << "bananas"
+end
+print_list(grocery_list)
 
+puts ""	
+puts "This is the second on the list: #{grocery_list[2]}"
 
+puts ""
+grocery_list.sort!
+print_list(grocery_list)
 
+puts ""
+grocery_list.delete_at(4)
+print_list(grocery_list)
 
-
-
-
-
-
-
-
-
-
-#cars = ["Toyota", "Honda", "Ford"]
-
-#cars.each do |car|
-#	puts car
-#end
+puts ""
+grocery_list.insert(4, "salmon")
+print_list(grocery_list)
